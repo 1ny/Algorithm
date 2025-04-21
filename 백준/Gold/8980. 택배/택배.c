@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 2001
+#define MAX 10001
 
 typedef struct {
 	int send;
@@ -17,8 +17,8 @@ int compare(const Box* a, const Box* b)
 int main() {
 	int n, c, m;
 	Box* arr = malloc(sizeof(Box) * MAX);
-	int cntArr[MAX] = { 0, };
-	int ret = 0;
+	long long cntArr[MAX] = { 0, };
+	long long ret = 0;
 	scanf("%d %d", &n, &c);
 	scanf("%d ", &m);
 	for (int i = 0; i < m; i++) {
@@ -57,7 +57,7 @@ int main() {
 		if(comp > 0) ret += comp;
 	}
 
-	printf("%d", ret);
+	printf("%lld", ret);
 
 	return 0;
 }
