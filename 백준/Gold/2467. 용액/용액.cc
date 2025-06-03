@@ -15,21 +15,14 @@ void binary_search(int idx) {
 	int mid;
 	while (st <= en) {
 		mid = (st + en) / 2;
-		if (feat[idx] * feat[mid] < 0) {
-			if (abs(feat[idx]) < abs(feat[mid])) en = mid - 1;
-			else if (abs(feat[idx]) > abs(feat[mid])) st = mid + 1;
-			else
-			{
-				sum = 0;
-				minA = feat[idx];
-				minB = feat[mid];
-				return;
-			}
-		}
+		if (abs(feat[idx]) < abs(feat[mid])) en = mid - 1;
+		else if (abs(feat[idx]) > abs(feat[mid])) st = mid + 1;
 		else
 		{
-			if (abs(feat[idx]) < abs(feat[mid])) en = mid - 1;
-			else if (abs(feat[idx]) > abs(feat[mid])) st = mid + 1;
+			sum = 0;
+			minA = feat[idx];
+			minB = feat[mid];
+			return;
 		}
 		if (abs(feat[idx] + feat[mid]) < sum) {
 			minA = feat[idx];
